@@ -31,14 +31,13 @@ you can check the already existed "DataProviderX" as a reference.
 
 in this section iam going to take a snippet and try to explain it to make this part clear
 
-// this reprent the filter which is passed by the user in query parameter
-// according to the requirement 
+<pre>
 'balanceMax' => [
-    // this reprent the condition that will be used between filter and user input
     'condition' => '<=',
     'key' => 'balance',
     'inputSetter' => 'setInput'
 ],
+</pre>
 
 - 'balanceMax' <br /> reprent the filter key which is passed by the user in the query parameter, 
 according to the requirement we name it 'balanceMax' but you can change it as you like.

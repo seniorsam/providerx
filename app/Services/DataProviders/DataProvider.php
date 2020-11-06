@@ -12,7 +12,6 @@ abstract class DataProvider{
     public function getUserRequiredFilters($userRequest){
         $op = [];
         $providerAvailableFilters = $this->getProviderAvailableFilters();
-        
         foreach($userRequest as $key => $value){
             if(isset($providerAvailableFilters[$key])){
                 $op[$key] = $providerAvailableFilters[$key];
@@ -34,10 +33,6 @@ abstract class DataProvider{
             $collection = $collection->where($filterValue['key'], $filterValue['condition'], $filterValue['userInput']);
         }
         return $collection;
-    }
-
-    public function setInput($inputValue){
-        return $inputValue;
     }
 
     abstract function getProviderAvailableFilters();

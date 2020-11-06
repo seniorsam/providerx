@@ -20,18 +20,15 @@ class DataProviderX extends DataProvider {
         return [
             'balanceMax' => [
                 'condition' => '<=',
-                'key' => 'parentAmount',
-                'inputSetter' => 'setInput'
+                'key' => 'parentAmount'
             ],
             'balanceMin' => [
                 'condition' => '>=',
-                'key' => 'parentAmount',
-                'inputSetter' => 'setInput'
+                'key' => 'parentAmount'
             ],
             'currency'=> [
                 'condition' => '=',
-                'key' => 'Currency',
-                'inputSetter' => 'setInput'
+                'key' => 'Currency'
             ],
             'statusCode' => [
                 'condition' => '=',

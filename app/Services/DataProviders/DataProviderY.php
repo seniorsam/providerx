@@ -20,18 +20,16 @@ class DataProviderY extends DataProvider {
         return [
             'balanceMax' => [
                 'condition' => '<=',
-                'key' => 'balance',
-                'inputSetter' => 'setInput'
+                'key' => 'balance'
             ],
             'balanceMin' => [
                 'condition' => '>=',
-                'key' => 'balance',
-                'inputSetter' => 'setInput'
+                'key' => 'balance'
+                
             ],
             'currency'=> [
                 'condition' => '=',
-                'key' => 'currency',
-                'inputSetter' => 'setInput'
+                'key' => 'currency'
             ],
             'statusCode' => [
                 'condition' => '=',

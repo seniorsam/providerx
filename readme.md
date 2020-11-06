@@ -20,12 +20,12 @@ steps in order to add new provider for example "DataProviderZ"
 
 ### configure the created class "DataProviderZ"
 
-1- set the provider $name property.
-2- create the getProviderAllData() function.
-3- create getProviderAvailableFilters() where you can create your provider specific filters configuration.
-4- create any other function you want to manipualte returned user inputs and user it in the fiters configuration.
+- set the provider $name property.
+- create the getProviderAllData() function.
+- create getProviderAvailableFilters() where you can create your provider specific filters configuration.
+- create any other function you want to manipualte returned user inputs and user it in the fiters configuration.
 
-you can check the already existed "DataProviderX" as a reference.
+you can check the already existed "DataProviderX" as a reference. 
 
 ### More Explanasion for "getProviderAvailableFilters()" function
 

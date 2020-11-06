@@ -26,7 +26,7 @@ steps in order to add new provider for example "DataProviderZ"
 - create getProviderAvailableFilters() where you can create your provider specific filters configuration.
 - create any other function you want to manipualte returned user inputs and user it in the fiters configuration.
 
-<br><b> you can check the already existed "DataProviderX" as a reference. </b>
+<b> you can check the already existed "DataProviderX" as a reference. </b>
 
 ### More Explanasion for "getProviderAvailableFilters()" function
 

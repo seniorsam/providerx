@@ -39,10 +39,10 @@ in this section iam going to take a snippet and try to explain it to make this p
 ],
 </pre>
 
-- 'balanceMax' <br /> reprent the filter key which is passed by the user in the query parameter, 
+- <b>'balanceMax'</b> <br /> reprent the filter key which is passed by the user in the query parameter, 
 according to the requirement we name it 'balanceMax' but you can change it as you like.
-- 'condition' represent the condition that will be used between provider data and the user filter.
-- 'key' <br /> the key in the returned provider data. 
-- 'inputSetter' <br /> according to the requirement you said that you are going to pass filter "statusCode=authorised" <br /> and this can't be done directly because "authorised" not a direct value in the returned provider data <br /> because it get translted in the provider to numbers <br /> such that "authorised" means "1" for the provider <br /> so i had to manipulate this by passing the user input to a function which i put its name in 'inputSetter' and this function manipulate the user input value.
+- <b>'condition'</b> <br /> represent the condition that will be used between provider data and the user filter.
+- <b>'key' <br /></b> the key in the returned provider data. 
+- <b>'inputSetter'</b> <br /> according to the requirement you said that you are going to pass filter "statusCode=authorised" <br /> and this can't be done directly because "authorised" not a direct value in the returned provider data <br /> because it get translted in the provider to numbers <br /> such that "authorised" means "1" for the provider <br /> so i had to manipulate this by passing the user input to a function which i put its name in 'inputSetter' and this function manipulate the user input value.
 
 i hope you understand the app so far and let me know if you have any question

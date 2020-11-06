@@ -5,7 +5,7 @@ App is hosted in heroku with the following cards
 For example to call the users api
 - https://providerx.herokuapp.com/api/v1/users
 For example to call the users api with filters
-- https://providerx.herokuapp.com/api/v1/users?provider=DataProviderX
+- https://providerx.herokuapp.com/api/v1/users?provider=DataProviderX&currency=USD&balanceMin=200&balanceMax=1000
 
 ## Code quality, scalability
 

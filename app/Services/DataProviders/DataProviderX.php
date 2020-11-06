@@ -29,12 +29,12 @@ class DataProviderX extends DataProvider {
                 'inputSetter' => 'setInput'
             ],
             'currency'=> [
-                'condition' => '==',
+                'condition' => '=',
                 'key' => 'Currency',
                 'inputSetter' => 'setInput'
             ],
             'statusCode' => [
-                'condition' => '==',
+                'condition' => '=',
                 'key' => 'statusCode',
                 'inputSetter' => 'setStatusInput'
             ]
@@ -42,9 +42,10 @@ class DataProviderX extends DataProvider {
 
     }
 
-    /**--------------------------------------------------------
-     * manipulate status value in this provider data
-     ----------------------------------------------------------*/
+    /**--------------------------------------------------------------------------------------------------------------------
+     * use this function name as the inputSetter in "getProviderAvailableFilters" function to manipulate the status value
+     * it simply take the user input value and manipulate it
+     ----------------------------------------------------------------------------------------------------------------------*/
     function setStatusInput($inputValue){
         $statuses = [
             'authorised' => 1,

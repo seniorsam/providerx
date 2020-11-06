@@ -29,12 +29,12 @@ class DataProviderY extends DataProvider {
                 'inputSetter' => 'setInput'
             ],
             'currency'=> [
-                'condition' => '==',
+                'condition' => '=',
                 'key' => 'currency',
                 'inputSetter' => 'setInput'
             ],
             'statusCode' => [
-                'condition' => '==',
+                'condition' => '=',
                 'key' => 'status',
                 'inputSetter' => 'setStatusInput'
             ]

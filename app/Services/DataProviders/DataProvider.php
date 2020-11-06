@@ -16,7 +16,11 @@ abstract class DataProvider{
         foreach($userRequest as $key => $value){
             if(isset($providerAvailableFilters[$key])){
                 $op[$key] = $providerAvailableFilters[$key];
-                $op[$key]['userInput'] = $this->{$providerAvailableFilters[$key]['inputSetter']}($value);
+                if(isset($providerAvailableFilters[$key]['inputSetter'])){
+                    $op[$key]['userInput'] = $this->{$providerAvailableFilters[$key]['inputSetter']}($value);
+                } else {
+                    $op[$key]['userInput'] = $value;
+                }
             }
         }
 

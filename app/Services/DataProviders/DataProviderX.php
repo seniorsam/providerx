@@ -27,11 +27,11 @@ class DataProviderX extends DataProvider {
                 'key' => 'parentAmount'
             ],
             'currency'=> [
-                'condition' => '=',
+                'condition' => '==',
                 'key' => 'Currency'
             ],
             'statusCode' => [
-                'condition' => '=',
+                'condition' => '==',
                 'key' => 'statusCode',
                 'inputSetter' => 'setStatusInput'
             ]

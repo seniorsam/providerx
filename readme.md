@@ -9,7 +9,9 @@ For example to call the users api with filters
 
 ## Code quality, scalability
 
-I builded this api using custom services, and i tried to decouble and seperate the concerns to make it easy to add new providers with small changes.
+- I builded this api using custom services, and i tried to decouble and seperate the concerns to make it easy to add new providers with small changes.
+- Search in the app is case-insenstive such that you can pass "currency=USD" or "currency=usd" or "currency=uSd" it all works.
+
 
 ## Ability to add DataProviderZ by small changes
 

@@ -13,12 +13,17 @@ class UsersController extends Controller
     ];
 
     function users(Request $request){
+        // $con = eval('return ((25>1)||(25<1));');
+        // return [$con];
+        // exit;
+        $providerName = $request->provider;
+        $userFilters = $request->except('provider');
         /**-------------------------------------
          * if user choose specific provider
          ---------------------------------------*/
-        if(isset($request->provider) && in_array($request->provider, $this->registeredProviders)){
+        if(!empty($providerName) && in_array($providerName, $this->registeredProviders)){
             $providerClassName = 'App\Services\DataProviders' . '\\' . $request->provider;
-            $this->callProvider(new $providerClassName(), $request);
+            $this->callProvider(new $providerClassName(), $userFilters);
             return $this->results;
         /**-----------------------------------------------------------------------------------------
          * user didn't choose specific provider so we going to work with all registered providers
@@ -26,17 +31,17 @@ class UsersController extends Controller
         } else {
             foreach($this->registeredProviders as $value){
                 $providerClassName = 'App\Services\DataProviders' . '\\' . $value;
-                $this->callProvider(new $providerClassName(), $request);
+                $this->callProvider(new $providerClassName(), $userFilters);
             }
             return $this->results;
         }
 
     }
 
-    public function callProvider($provider, $request){
-        if(empty($request))
+    public function callProvider($provider, $userFilters){
+        if(empty($userFilters))
             $this->results[$provider->name] = $provider->getProviderAllData();
         else 
-            $this->results[$provider->name] = $provider->getProviderFilteredData($request->all());
+            $this->results[$provider->name] = $provider->getProviderFilteredData($userFilters);
     }
 }

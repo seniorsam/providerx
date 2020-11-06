@@ -9,10 +9,10 @@ abstract class DataProvider{
         return json_decode( file_get_contents( $this->sourceFile ) );
     }
 
-    public function getUserRequiredFilters($userRequest){
+    public function getUserRequiredFilters($userFilters){
         $op = [];
         $providerAvailableFilters = $this->getProviderAvailableFilters();
-        foreach($userRequest as $key => $value){
+        foreach($userFilters as $key => $value){
             if(isset($providerAvailableFilters[$key])){
                 $op[$key] = $providerAvailableFilters[$key];
                 if(isset($providerAvailableFilters[$key]['inputSetter'])){
@@ -26,13 +26,26 @@ abstract class DataProvider{
         return $op;
     }
 
-    public function getProviderFilteredData($userRequest){
-        $userRequiredfilters = $this->getUserRequiredFilters($userRequest);
+    public function getProviderFilteredData($userFilters){
+        $userRequiredfilters = $this->getUserRequiredFilters($userFilters);
         $collection = collect($this->getProviderAllData());
-        foreach($userRequiredfilters as $filterKey => $filterValue){
-            $collection = $collection->where($filterValue['key'], $filterValue['condition'], $filterValue['userInput']);
+        $filtersLine = $this->buildFiltersLine($userRequiredfilters);
+        
+        $filtered = $collection->filter(function ($value, $key) use ($filtersLine) {
+            return eval($filtersLine);
+        });
+        return $filtered;
+    }
+
+    public function buildFiltersLine($userFilters){
+        $filtersLine = '';
+        foreach($userFilters as $filterKey => $filterValue){
+            $filtersLine .= 'strtolower($value->' . $filterValue['key'] . ') ';
+            $filtersLine .= $filterValue['condition'] . ' ';
+            $filtersLine .= 'strtolower("' . $filterValue['userInput'] . '") && ';
+            
         }
-        return $collection;
+        return rtrim('return ' . $filtersLine, ' && ') . ';';
     }
 
     abstract function getProviderAvailableFilters();

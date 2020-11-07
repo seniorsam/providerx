@@ -30,7 +30,6 @@ abstract class DataProvider{
         $userRequiredfilters = $this->getUserRequiredFilters($userFilters);
         $collection = collect($this->getProviderAllData());
         $filtersLine = $this->buildFiltersLine($userRequiredfilters);
-        
         $filtered = $collection->filter(function ($value, $key) use ($filtersLine) {
             return eval($filtersLine);
         });

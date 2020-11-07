@@ -7,11 +7,15 @@ For example to call the users api
 For example to call the users api with filters
 - https://providerx.herokuapp.com/api/v1/users?provider=DataProviderX&currency=USD&balanceMin=200&balanceMax=1000
 
+## Tools
+
+- laravel 5.8
+- heroku for hosting
+
 ## Code quality, scalability
 
 - I builded this api using custom services, and i tried to decouble and seperate the concerns to make it easy to add new providers with small changes.
 - Search in the app is case-insenstive such that you can pass "currency=USD" or "currency=usd" or "currency=uSd" it all works.
-
 
 ## Ability to add DataProviderZ by small changes
 
